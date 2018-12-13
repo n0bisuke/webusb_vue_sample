@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RGB LED</title>
+    <link rel="stylesheet" href="https://unpkg.com/@radial-color-picker/vue-color-picker/dist/vue-color-picker.min.css">
+    <style>
+    #app { font-family: "Avenir", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; display: flex; flex-direction: column; align-items: center; color: #2c3e50; margin-top: 40px; } h1 { font-weight: normal; } pre { min-width: 275px; padding: 15px 30px; background: #f8f8f8; color: #525252; font-size: 15px; font-weight: bold; line-height: 1.6; margin: 0; } @media (max-width: 420px) { h1 { font-size: 1.4em; } } [v-cloak] {display:none;}
+    </style>
+  </head>
+  <body>
+    <div id="app">
+        <button id="connect" @click="connectButtonAction" v-cloak>{{connectButtonText}}</button>
+        <span id="status" v-cloak>{{statusText}}</span>
+
+        <color-picker v-model="color" @input="onColorInput"></color-picker>
+        <h1 v-text="msg"></h1>
+        <pre v-html="color"></pre>
+
+        <script src="https://jp.vuejs.org/js/vue.min.js"></script>
+        <script src="https://unpkg.com/@radial-color-picker/vue-color-picker"></script>
+        <script src="serial.js"></script>
+        <script src="app.js"></script>
+    </div>
+    
+  </body>
+</html>
